@@ -51,3 +51,6 @@
 
 <p>&nbsp;</p>
 <strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?
+
+
+## This solution is done using one stack, the approach I've used is to store the iteration as reverse of what PostOrder what really is, because stack follows LIFO mechanism, and at last I pop every element from stack and stored it in vector<int> res and returned it.
