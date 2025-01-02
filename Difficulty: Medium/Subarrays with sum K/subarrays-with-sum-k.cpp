@@ -10,20 +10,23 @@ using namespace std;
 class Solution {
   public:
     int countSubarrays(vector<int> &arr, int k) {
-        unordered_map<int,int> freq;
-        int prefix = 0, cnt = 0;
+        unordered_map<int,int> mp; 
+        mp[0] = 1; 
         
-        freq[0] = 1;
+        int cnt = 0, prefix = 0;
         
         for(int i : arr) {
-            prefix += i; 
-            if(freq.find(prefix - k) != freq.end()) {
-                cnt += freq[prefix - k];
+            prefix += i;
+            
+            if(mp.find(prefix - k) != mp.end()) {
+                cnt += mp[prefix - k];
             }
-            freq[prefix]++;
+            
+            mp[prefix]++;
         }
         
-    return cnt; 
+        
+        return cnt; 
     }
 };
 
