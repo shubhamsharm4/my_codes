@@ -10,9 +10,9 @@ class Solution {
         long cnt = 0;
         
         unordered_map<int,int> mp;
-        mp[0] = 1; 
-        
+        mp[0] = 1;
         int currXor = 0;
+        
         for(int i = 0; i < arr.size(); ++i) {
             currXor ^= arr[i];
             if(mp.find(currXor ^ k) != mp.end()) cnt += mp[currXor ^ k];
